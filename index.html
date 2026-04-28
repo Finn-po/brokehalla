@@ -432,6 +432,24 @@
   }
   .tiktok-btn:hover { box-shadow:0 0 25px rgba(187,68,255,0.5); transform:translateY(-2px); }
   .tiktok-icon { font-size:1.1rem; }
+  .discord-btn {
+    display:inline-flex; align-items:center; gap:10px;
+    background:linear-gradient(135deg,#5865F2,#404EED);
+    border:1px solid rgba(88,101,242,0.6);
+    color:#fff; text-decoration:none;
+    padding:12px 28px; border-radius:50px;
+    font-weight:700; font-size:.85rem; letter-spacing:1.5px;
+    transition:box-shadow .2s, transform .2s;
+    margin-bottom:28px;
+  }
+  .discord-btn:hover { box-shadow:0 0 25px rgba(88,101,242,0.6); transform:translateY(-2px); }
+  .discord-icon { font-size:1.1rem; }
+  .footer-cta-row {
+    display:flex; gap:14px; flex-wrap:wrap; justify-content:center;
+    margin-bottom:28px;
+  }
+  .footer-cta-row .tiktok-btn,
+  .footer-cta-row .discord-btn { margin-bottom:0; }
 
   /* ── SCROLLBAR ── */
   ::-webkit-scrollbar { width:6px; }
@@ -634,6 +652,7 @@
   <div class="nav-links">
     <a href="#maps">Maps</a>
     <a href="#install">Install Guide</a>
+    <a onclick="window.open('https://discord.gg/NqdF5z8Fz','_blank')" href="#">Discord</a>
     <a onclick="window.open('https://www.tiktok.com/@brokehalla','_blank')" href="#">TikTok</a>
   </div>
 </nav>
@@ -868,13 +887,19 @@
   <img class="footer-logo" src="images/logo.png" alt="BROKEHALLA"
        onclick="window.open('https://www.tiktok.com/@brokehalla','_blank')">
   <div class="footer-brand">BROKEHALLA</div>
-  <a class="tiktok-btn" href="https://www.tiktok.com/@brokehalla" target="_blank">
-    <span class="tiktok-icon">♪</span> Follow on TikTok
-  </a>
+  <div class="footer-cta-row">
+    <a class="tiktok-btn" href="https://www.tiktok.com/@brokehalla" target="_blank">
+      <span class="tiktok-icon">♪</span> Follow on TikTok
+    </a>
+    <a class="discord-btn" href="https://discord.gg/NqdF5z8Fz" target="_blank">
+      <span class="discord-icon">💬</span> Support &amp; Community
+    </a>
+  </div>
   <div class="footer-links">
     <a href="#maps">Maps</a>
     <a href="#install">Install Guide</a>
     <a href="https://www.tiktok.com/@brokehalla" target="_blank">TikTok</a>
+    <a href="https://discord.gg/NqdF5z8Fz" target="_blank">Discord</a>
   </div>
   <div class="footer-links" style="margin-top:16px;">
     <a onclick="openLegal('privacy')" style="cursor:pointer;">Privacy Policy</a>
