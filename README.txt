@@ -1,19 +1,16 @@
-PANDEX v0.8 Contact Patch
+PANDEX v15 structure/performance patch
 
-Copy only these files into your existing project folder:
+Copy into your project root:
+- all .html files
+- assets/styles.css
 
-- index.html
-- contact.html
+What changed:
+- Shared website styling moved from every HTML file into assets/styles.css
+- This reduces duplicated code and makes future design changes safer
+- Google Fonts preconnect added for faster loading
+- Map preview images use lazy loading + async decoding
 
-Changes:
-- Smaller Pandex logo in nav, hero and footer
-- Homepage forces top position on normal page load and removes old #submit landing state
-- New contact.html page
-- Contact link added to navigation and footer
-- Contact teaser added to homepage
-
-Then run:
-
+After copying:
 git add .
-git commit -m "Add contact page and adjust logo size"
+git commit -m "Move shared styling to CSS and improve loading"
 git push
