@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Brokehalla creator profile on Pandex – original Brawlhalla map background previews.">
-<title>Brokehalla Creator Profile – PANDEX</title>
+<meta name="description" content="PANDEX – independent modding platform for original game-content previews.">
+<meta property="og:title" content="Brokehalla">
+<meta property="og:description" content="Brokehalla is the first creator publishing original Brawlhalla-inspired map previews on Pandex.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<title>Brokehalla</title>
 <link rel="icon" type="image/png" href="images/pandex-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 <style>
@@ -52,26 +57,59 @@
     display:flex; align-items:center; justify-content:space-between; height:70px;
   }
   .nav-logo-wrap {
-    display:flex; align-items:center; gap:12px;
+    display:flex; align-items:center; gap:10px;
     text-decoration:none;
     cursor:pointer;
+    min-width:0;
   }
-  .nav-logo-wrap img { height:29px; filter: drop-shadow(0 0 8px rgba(0,200,255,0.6)); }
-  .nav-brand {
-    font-family:'Orbitron',sans-serif;
-    font-size:1.25rem; font-weight:900;
-    background: linear-gradient(90deg, var(--blue), var(--violet));
-    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-    letter-spacing:2px;
+  .nav-logo-icon { height:20px; width:auto; filter: drop-shadow(0 0 8px rgba(0,200,255,0.55)); }
+  .nav-wordmark { height:20px; width:auto; max-width:150px; object-fit:contain; }
+  .nav-brand { display:none; }
+  @media (max-width:520px) {
+    .nav-wordmark { height:16px; max-width:118px; }
+    .nav-logo-icon { height:18px; }
   }
-  .nav-links { display:flex; gap:32px; }
-  .nav-links a {
-    color: rgba(240,244,255,0.7);
-    text-decoration:none; font-weight:600; font-size:.9rem;
-    letter-spacing:1px; text-transform:uppercase;
-    transition: color .2s;
+  .menu-toggle {
+    width:46px; height:46px;
+    border:1px solid rgba(0,200,255,0.28);
+    background:rgba(255,255,255,0.04);
+    border-radius:12px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:5px; cursor:pointer;
+    transition: border-color .2s, background .2s, box-shadow .2s;
   }
-  .nav-links a:hover { color: var(--blue); }
+  .menu-toggle:hover { border-color:rgba(0,200,255,0.75); background:rgba(0,200,255,0.08); box-shadow:0 0 22px rgba(0,200,255,0.18); }
+  .menu-toggle span { width:22px; height:2px; border-radius:99px; background:var(--white); box-shadow:0 0 8px rgba(0,200,255,0.4); }
+  .menu-panel {
+    position:fixed; top:0; right:0; z-index:140;
+    width:min(390px, 88vw); height:100vh;
+    background:rgba(7,12,22,0.98);
+    border-left:1px solid rgba(0,200,255,0.2);
+    box-shadow:-30px 0 80px rgba(0,0,0,0.55), 0 0 60px rgba(0,200,255,0.08);
+    backdrop-filter:blur(20px);
+    transform:translateX(105%);
+    transition:transform .25s ease;
+    padding:26px 26px 34px;
+    display:flex; flex-direction:column;
+  }
+  .menu-panel.active { transform:translateX(0); }
+  .menu-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:28px; }
+  .menu-head img { height:26px; filter: drop-shadow(0 0 8px rgba(0,200,255,0.6)); }
+  .menu-close { width:42px; height:42px; border-radius:50%; border:1px solid rgba(240,244,255,0.14); background:rgba(255,255,255,0.05); color:#fff; cursor:pointer; font-size:1.2rem; }
+  .menu-links { display:flex; flex-direction:column; gap:8px; }
+  .menu-links a {
+    color:rgba(240,244,255,0.78); text-decoration:none;
+    padding:14px 14px; border-radius:12px;
+    font-family:'Orbitron',sans-serif; font-size:.85rem; font-weight:800;
+    letter-spacing:1.5px; text-transform:uppercase;
+    border:1px solid transparent;
+    transition:background .2s, border-color .2s, color .2s, transform .2s;
+  }
+  .menu-links a:hover { color:#fff; background:rgba(0,200,255,0.08); border-color:rgba(0,200,255,0.24); transform:translateX(-2px); }
+  .menu-divider { height:1px; background:linear-gradient(90deg, transparent, rgba(0,200,255,0.35), transparent); margin:12px 0; }
+  .menu-note { margin-top:auto; color:rgba(240,244,255,0.42); font-size:.78rem; line-height:1.55; }
+  .menu-backdrop { position:fixed; inset:0; z-index:130; background:rgba(0,0,0,0.55); backdrop-filter:blur(4px); display:none; }
+  .menu-backdrop.active { display:block; }
 
   /* ── COMING SOON BADGE ── */
   .coming-soon-badge {
@@ -150,7 +188,7 @@
   }
 
   .hero-logo {
-    width: clamp(142px, 25.5vw, 285px);
+    width: clamp(106px, 19vw, 214px);
     filter: drop-shadow(0 0 40px rgba(0,200,255,0.7)) drop-shadow(0 0 80px rgba(139,47,201,0.5));
     animation: logoPulse 3s ease-in-out infinite;
     cursor: pointer;
@@ -408,7 +446,7 @@
     padding:48px 5% 36px;
     text-align:center;
   }
-  .footer-logo { height:36px; margin-bottom:16px; cursor:pointer;
+  .footer-logo { height:27px; margin-bottom:16px; cursor:pointer;
     filter: drop-shadow(0 0 12px rgba(0,200,255,0.4)); }
   .footer-brand { display:none; }
   .footer-links { display:flex; gap:28px; justify-content:center; flex-wrap:wrap; margin-bottom:28px; }
@@ -453,7 +491,8 @@
 
   /* ── RESPONSIVE ── */
   @media(max-width:640px){
-    .nav-links { display:none; }
+    nav { height:64px; padding:0 4%; }
+    .menu-toggle { width:42px; height:42px; }
     .hero-stats { gap:24px; }
   }
 
@@ -551,11 +590,9 @@
 
   /* ── COOKIE CONSENT (centered blocking modal) ── */
   #cookieBanner {
-    position: fixed; inset: 0; z-index: 9999;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(10px);
-    display: flex; align-items: center; justify-content: center;
-    padding: 20px;
+    position: fixed; left:20px; right:20px; bottom:20px; z-index:9999;
+    display:flex; justify-content:center;
+    pointer-events:none;
     animation: cookieFadeIn 0.35s ease;
   }
   #cookieBanner.hidden { display: none; }
@@ -565,11 +602,12 @@
     border: 1px solid rgba(0,200,255,0.4);
     border-radius: 18px;
     padding: 32px 30px 28px;
-    max-width: 480px; width: 100%;
+    max-width: 720px; width: 100%;
     max-height: 90vh; overflow-y: auto;
     text-align: center;
     box-shadow: 0 0 60px rgba(0,200,255,0.25), 0 0 100px rgba(139,47,201,0.18), 0 20px 60px rgba(0,0,0,0.7);
     animation: cookieSlideIn 0.4s cubic-bezier(0.16,1,0.3,1);
+    pointer-events:auto;
   }
   @keyframes cookieSlideIn {
     from { transform: translateY(20px) scale(0.96); opacity: 0; }
@@ -635,85 +673,71 @@
   .legal-close:hover { color:var(--white); }
 
 
-  .page-hero { min-height:55vh; padding:130px 5% 70px; text-align:center; position:relative; z-index:1; background:linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%); }
-  .creator-card-large { max-width:900px; margin:0 auto; background:var(--card); border:1px solid rgba(0,200,255,.16); border-radius:20px; padding:30px; box-shadow:0 18px 60px rgba(0,0,0,.25); }
-  .creator-meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; margin-top:24px; }
-  .creator-meta-box { background:rgba(0,200,255,.05); border:1px solid rgba(0,200,255,.12); border-radius:14px; padding:18px; }
-  .creator-meta-label { font-size:.7rem; letter-spacing:2px; text-transform:uppercase; color:rgba(240,244,255,.45); margin-bottom:8px; }
-  .creator-meta-value { color:var(--white); font-weight:700; }
+.page-hero{position:relative;z-index:1;min-height:52vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 5% 50px}.page-kicker{font-family:'Orbitron',sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-size:.75rem;font-weight:900;margin-bottom:14px}.page-title{font-family:'Orbitron',sans-serif;font-size:clamp(2.2rem,6vw,4rem);line-height:1.08;background:linear-gradient(135deg,#fff,var(--blue),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.page-sub{max-width:720px;color:rgba(240,244,255,.68);line-height:1.75;margin:20px auto 0}.page-content{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:30px 5% 90px}.content-card{background:linear-gradient(180deg,rgba(15,26,42,.9),rgba(13,20,32,.82));border:1px solid rgba(0,200,255,.14);border-radius:24px;padding:28px;margin:18px 0;box-shadow:0 14px 45px rgba(0,0,0,.28)}.content-card h2{font-family:'Orbitron',sans-serif;font-size:1.05rem;letter-spacing:1px;color:#fff;margin-bottom:12px}.content-card h3{color:var(--blue);font-size:.95rem;margin:18px 0 8px}.content-card p,.content-card li{color:rgba(240,244,255,.68);line-height:1.75;font-size:.95rem}.content-card ul{padding-left:22px}.content-card a{color:var(--blue)}
 </style>
 </head>
 <body>
 <nav>
-  <a class="nav-logo-wrap" href="index.html"><img src="images/logo.png" alt="PANDEX"></a>
-  <div class="nav-links">
-    <a href="index.html#maps">Maps</a>
-    <a href="creator-brokehalla.html">Creator</a>
-    <a href="about.html">About</a>
-    <a href="faq.html">FAQ</a>
-    <a href="roadmap.html">Roadmap</a>
-    <a href="submit.html">Submit</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <a class="nav-logo-wrap" href="index.html" aria-label="PANDEX home">
+    <img class="nav-logo-icon" src="images/logo.png" alt="Pandex panda icon">
+    <img class="nav-wordmark" src="images/pandex-wordmark.png" alt="PANDEX">
+  </a>
+  <button class="menu-toggle" onclick="openMenu()" aria-label="Open navigation menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<section class="page-hero">
-  <div class="hero-bg-orb orb1"></div>
-  <div class="hero-bg-orb orb2"></div>
-  <p class="hero-eyebrow">Creator Profile</p>
-  <h1 class="hero-title">Brokehalla</h1>
-  <p class="hero-sub">Original custom Brawlhalla map background concepts published on Pandex as visual previews.</p>
-  <a class="hero-cta" href="index.html#maps">View Map Previews ↓</a>
-</section>
-
-<section>
-  <h2 class="section-title">About Brokehalla</h2>
-  <div class="section-divider"></div>
-  <p class="section-sub">Brokehalla creates original fantasy-inspired arena backgrounds for the Brawlhalla community.</p>
-  <div class="creator-card-large">
-    <div class="install-step" style="margin-bottom:0;">
-      <div class="step-num">B</div>
-      <div class="step-content">
-        <div class="step-title">Creator Focus</div>
-        <div class="step-desc">The current Pandex launch collection focuses on high-detail sky arenas, crystal environments, floating platforms and fantasy map concepts. The platform currently presents image previews only; downloads can be added later after the content and rights workflow is ready.</div>
-      </div>
+<div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
+<aside id="menuPanel" class="menu-panel" aria-label="PANDEX navigation">
+  <div class="menu-head">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <img src="images/logo.png" alt="Pandex panda icon">
+      <img src="images/pandex-wordmark.png" alt="PANDEX" style="height:22px;width:auto;max-width:150px;object-fit:contain;">
     </div>
-    <div class="creator-meta-grid">
-      <div class="creator-meta-box"><div class="creator-meta-label">Creator</div><div class="creator-meta-value">Brokehalla</div></div>
-      <div class="creator-meta-box"><div class="creator-meta-label">Game Focus</div><div class="creator-meta-value">Brawlhalla</div></div>
-      <div class="creator-meta-box"><div class="creator-meta-label">Current Format</div><div class="creator-meta-value">Image Previews</div></div>
-      <div class="creator-meta-box"><div class="creator-meta-label">Status</div><div class="creator-meta-value">First Drop Soon</div></div>
-    </div>
+    <button class="menu-close" onclick="closeMenu()" aria-label="Close navigation menu">×</button>
   </div>
-</section>
-
-<section>
-  <h2 class="section-title">Creator Links</h2>
-  <div class="section-divider"></div>
-  <p class="section-sub">Follow Brokehalla and join the current community channels.</p>
-  <div class="footer-cta-row" style="justify-content:center; margin-top:20px;">
-    <a class="tiktok-btn" href="https://www.tiktok.com/@brokehalla" target="_blank"><span class="tiktok-icon">♪</span> Follow Brokehalla on TikTok</a>
-    <a class="discord-btn" href="https://discord.gg/SyTpDNjmaG" target="_blank"><span class="discord-icon">💬</span> Join the Discord</a>
+  <div class="menu-links">
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="index.html#maps" onclick="closeMenu()">Maps</a>
+    <a href="creator-brokehalla.html" onclick="closeMenu()">Creator</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="faq.html" onclick="closeMenu()">FAQ</a>
+    <a href="roadmap.html" onclick="closeMenu()">Roadmap</a>
+    <a href="submit.html" onclick="closeMenu()">Submit</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <div class="menu-divider"></div>
+    <a href="privacy.html" onclick="closeMenu()">Privacy</a>
+    <a href="impressum.html" onclick="closeMenu()">Impressum</a>
+    <a href="terms.html" onclick="closeMenu()">Terms</a>
+    <a href="takedown.html" onclick="closeMenu()">Takedown</a>
+    <div class="menu-divider"></div>
+    <a href="https://discord.gg/SyTpDNjmaG" target="_blank" onclick="closeMenu()">Discord</a>
+    <a href="https://www.tiktok.com/@brokehalla" target="_blank" onclick="closeMenu()">TikTok</a>
   </div>
-</section>
+  <div class="menu-note">PANDEX is an independent fan-content platform. Current public version shows original map previews.</div>
+</aside>
 
+<section class="page-hero"><div class="hero-bg-orb orb1"></div><div class="hero-bg-orb orb2"></div><div class="page-kicker">Creator profile</div><h1 class="page-title">Brokehalla</h1><p class="page-sub">Brokehalla is the first creator publishing original Brawlhalla-inspired map previews on Pandex.</p></section>
+<main class="page-content"><div class="content-card"><h2>Creator style</h2><p>Fantasy arenas, floating platforms, crystal worlds, sky environments and highly detailed map-background concepts.</p></div>
+<div class="content-card"><h2>Current maps</h2><p>Celestial Storm Arena, Astral Observatory, Crystal Rift and Golden Citadel are currently shown as preview images on the homepage.</p></div>
+<div class="content-card"><h2>Creator links</h2><p><a href="https://discord.gg/SyTpDNjmaG" target="_blank">Discord</a> · <a href="https://www.tiktok.com/@brokehalla" target="_blank">TikTok</a></p></div></main>
 <footer>
-  <img class="footer-logo" src="images/logo.png" alt="PANDEX" onclick="window.location.href='index.html'">
+  <div class="footer-logo-row" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <img class="footer-logo" src="images/logo.png" alt="Pandex panda icon">
+    <img class="footer-wordmark" src="images/pandex-wordmark.png" alt="PANDEX">
+  </div>
   <div style="font-size:.85rem; color:rgba(240,244,255,.55); margin-bottom:18px; max-width:520px; margin-left:auto; margin-right:auto;">Independent platform for original game mods.<br>Starting with custom Brawlhalla map previews by Brokehalla.</div>
   <div class="footer-links">
-    <a href="index.html#maps">Maps</a>
-    <a href="creator-brokehalla.html">Creator</a>
-    <a href="about.html">About</a>
-    <a href="faq.html">FAQ</a>
-    <a href="roadmap.html">Roadmap</a>
-    <a href="submit.html">Submit</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html#maps">Maps</a><a href="creator-brokehalla.html">Creator</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="roadmap.html">Roadmap</a><a href="submit.html">Submit</a><a href="contact.html">Contact</a>
   </div>
   <div class="footer-links" style="margin-top:16px;">
-    <a href="terms.html">Terms</a>
-    <a href="takedown.html">Takedown</a>
+    <a href="privacy.html">Datenschutz</a><a href="impressum.html">Impressum</a><a href="terms.html">Terms</a><a href="takedown.html">Takedown</a>
   </div>
   <div class="footer-copy" style="margin-top:12px;">© 2026 PANDEX · Unofficial fan-made project. All trademarks belong to their respective owners.</div>
 </footer>
-</body>
-</html>
+<script>
+function openMenu(){document.getElementById('menuPanel').classList.add('active');document.getElementById('menuBackdrop').classList.add('active');document.body.style.overflow='hidden';}
+function closeMenu(){document.getElementById('menuPanel').classList.remove('active');document.getElementById('menuBackdrop').classList.remove('active');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
+</script>
+</body></html>
