@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="PANDEX – Modding platform for original game content. Preview original custom Brawlhalla map concepts and community-made content.">
-<meta name="keywords" content="Pandex, modding, custom maps, Brawlhalla mods, free download, game mods, community creators">
+<meta name="keywords" content="Pandex, modding, custom maps, Brawlhalla mods, game mods, community creators">
 <title>PANDEX – Modding Platform for Original Game Content</title>
 <link rel="icon" type="image/png" href="images/pandex-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
@@ -646,7 +646,7 @@
   </a>
   <div class="nav-links">
     <a href="#maps">Maps</a>
-    <a href="#install">Install Guide</a>
+    <a href="#submit">Submit</a>
     <a onclick="window.open('https://discord.gg/SyTpDNjmaG','_blank')" href="#">Discord</a>
     <a onclick="window.open('https://www.tiktok.com/@brokehalla','_blank')" href="#">TikTok</a>
   </div>
@@ -663,12 +663,12 @@
     <span class="cs-text">🚀 FIRST DROP SOON — STAY TUNED</span>
   </div>
   <h1 class="hero-title">Original Mods.<br>Built for Games.</h1>
-  <p class="hero-sub">Pandex hosts original custom content from independent creators — completely free. Currently featuring map backgrounds for Brawlhalla, more games coming soon.<br><span style="display:block;text-align:center;font-family:'Orbitron',sans-serif;font-weight:900;font-size:.95rem;letter-spacing:3px;background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:10px;">FEATURED CREATOR: BROKEHALLA</span></p>
-  <a class="hero-cta" href="#maps">Browse Free Maps ↓</a>
+  <p class="hero-sub">Pandex hosts original custom content from independent creators. Current launch version showcases original Brawlhalla map background previews by Brokehalla, with more games planned later.</p>
+  <a class="hero-cta" href="#maps">Browse Map Previews ↓</a>
   <div class="hero-stats">
     <div class="hero-stat">
-      <div class="hero-stat-num">FREE</div>
-      <div class="hero-stat-label">All Mods</div>
+      <div class="hero-stat-num">LIVE</div>
+      <div class="hero-stat-label">Previews</div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-num">100%</div>
@@ -684,7 +684,7 @@
 <section id="maps">
   <h2 class="section-title">Brawlhalla Maps by Brokehalla</h2>
   <div class="section-divider"></div>
-  <p class="section-sub">Original custom Brawlhalla map concepts by independent creator <strong style="color:var(--blue);">Brokehalla</strong>. Current version shows image previews only — downloads will be added later.</p>
+  <p class="section-sub">Original custom Brawlhalla map concepts by independent creator <strong style="color:var(--blue);">Brokehalla</strong>. Current version shows image previews only.</p>
 
   <div class="maps-grid">
 
@@ -747,104 +747,54 @@
   </div>
 </section>
 
-<div class="modal-overlay" id="adModal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeAd()">✕</button>
-    <div class="modal-icon">📺</div>
-    <div class="modal-title">Almost There!</div>
-    <div class="modal-sub">Your download for <strong id="mapNameDisplay" style="color:var(--blue)">this map</strong> is ready — click below to start.</div>
-    <div id="adTimerSection">
-    <div style="background:rgba(0,200,255,0.05); border:1px solid rgba(0,200,255,0.18); border-radius:12px; padding:20px 22px; text-align:left; margin-bottom:24px;">
-      <div style="font-family:'Orbitron',sans-serif; font-size:.75rem; font-weight:700; letter-spacing:2px; color:var(--blue); margin-bottom:14px; text-transform:uppercase; text-align:center;">📦 Quick Install Guide</div>
-      <div style="font-size:.85rem; color:rgba(240,244,255,.8); line-height:1.7;">
-        <div style="margin-bottom:10px;"><span style="color:var(--blue);font-weight:700;font-family:'Orbitron',sans-serif;">1.</span> Every map has at least <strong>3 files</strong> — Background, Platform parts &amp; Thumbnail.</div>
-        <div style="margin-bottom:10px;"><span style="color:var(--blue);font-weight:700;font-family:'Orbitron',sans-serif;">2.</span> Open the Brawlhalla files and navigate to the <strong style="color:var(--violet);">mapArt</strong>, <strong style="color:var(--violet);">Thumbnail</strong> &amp; <strong style="color:var(--violet);">Background</strong> files.</div>
-        <div><span style="color:var(--blue);font-weight:700;font-family:'Orbitron',sans-serif;">3.</span> Replace the files with my map files. Start Brawlhalla and enjoy my map! 🎉</div>
-      </div>
-    </div>
-    </div>
-    <button class="btn-modal-download" id="downloadBtn" onclick="triggerDownload()">
-      ✅ Download — FREE
-    </button>
-
-    <div id="postAdGuide" style="display:none; text-align:left; margin-top:4px;">
-      <div style="text-align:center; margin-bottom:18px;">
-        <div style="font-size:1.5rem; margin-bottom:6px;">✅</div>
-        <div style="font-family:'Orbitron',sans-serif; font-weight:900; font-size:1rem; color:var(--blue); letter-spacing:2px;">Download Started!</div>
-        <div style="font-size:.8rem; color:rgba(240,244,255,.5); margin-top:4px;">Your ZIP is on its way. Quick install guide below.</div>
-      </div>
-      <div style="background:rgba(0,200,255,0.05); border:1px solid rgba(0,200,255,0.15); border-radius:12px; padding:18px 20px;">
-        <div style="font-family:'Orbitron',sans-serif; font-size:.75rem; font-weight:700; letter-spacing:2px; color:var(--blue); margin-bottom:14px; text-transform:uppercase;">📦 How to Install</div>
-        <div style="font-size:.85rem; color:rgba(240,244,255,.8); line-height:1.85;">
-          <div style="margin-bottom:10px;"><span style="color:var(--blue);font-weight:700;font-family:'Orbitron',sans-serif;">1.</span> Every map has at least <strong>3 files</strong> — Background, Platform parts &amp; Thumbnail.</div>
-          <div style="margin-bottom:10px;"><span style="color:var(--blue);font-weight:700;font-family:'Orbitron',sans-serif;">2.</span> Open the Brawlhalla files and navigate to the <strong style="color:var(--violet);">mapArt</strong>, <strong style="color:var(--violet);">Thumbnail</strong> &amp; <strong style="color:var(--violet);">Background</strong> files.</div>
-          <div><span style="color:var(--blue);font-weight:700;font-family:'Orbitron',sans-serif;">3.</span> Replace the files with my map files. Start Brawlhalla and enjoy my map! 🎉</div>
-        </div>
-      </div>
-      <button class="btn-modal-download" style="margin-top:18px; opacity:1;" onclick="closeAd()">
-        Close ✕
-      </button>
-    </div>
-    
-    <div id="lockedMessage" style="display:none; text-align:center; padding:8px 4px;">
-      <div style="font-size:3rem; margin-bottom:14px;">🔒</div>
-      <div style="font-family:'Orbitron',sans-serif; font-weight:900; font-size:1.4rem; letter-spacing:2px; background:linear-gradient(90deg,var(--blue),var(--violet)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:14px;">
-        COMING SOON
-      </div>
-      <div style="font-size:.9rem; color:rgba(240,244,255,.75); line-height:1.6; margin-bottom:8px;">
-        The maps will be available for download <strong style="color:var(--blue);">very soon</strong>!
-      </div>
-      <div style="font-size:.82rem; color:rgba(240,244,255,.5); line-height:1.6; margin-bottom:24px;">
-        Follow <a href="https://www.tiktok.com/@brokehalla" target="_blank" style="color:var(--blue); text-decoration:none; font-weight:700;">@brokehalla</a> on TikTok or join our <a href="https://discord.gg/SyTpDNjmaG" target="_blank" style="color:var(--blue); text-decoration:none; font-weight:700;">Discord</a> to be the first to know when downloads go live.
-      </div>
-      <button class="btn-modal-download" style="opacity:1;" onclick="closeAd()">
-        Got it ✓
-      </button>
-    </div>
-  </div>
-</div>
-
-<section id="install">
-  <h2 class="section-title">How to Install the Custom Map</h2>
+<section id="submit">
+  <h2 class="section-title">Submit Your Map</h2>
   <div class="section-divider"></div>
-  <p class="section-sub">Just 3 simple steps to get your custom map running in Brawlhalla.</p>
+  <p class="section-sub">Want your original map background on Pandex? Send your preview images and project details for review.</p>
 
   <div class="install-wrap">
-
     <div class="install-step">
       <div class="step-num">1</div>
       <div class="step-content">
-        <div class="step-title">Check Your ZIP File</div>
-        <div class="step-desc">Every map has at least <strong style="color:var(--violet)">3 files</strong> inside the ZIP — the <strong>Background</strong>, the <strong>Platform parts</strong> and a <strong>Thumbnail</strong>. Some maps have multiple platform parts.</div>
+        <div class="step-title">Original Content Only</div>
+        <div class="step-desc">Submit only content you created yourself. No anime characters, copied artwork, ripped game assets, third-party logos or other protected IP.</div>
       </div>
     </div>
 
     <div class="install-step">
       <div class="step-num">2</div>
       <div class="step-content">
-        <div class="step-title">Open the Brawlhalla Files</div>
-        <div class="step-desc">Right-click Brawlhalla in your Steam Library → <strong style="color:var(--blue)">Manage → Browse local files</strong>. Then navigate to the <code style="background:rgba(0,200,255,0.1);padding:2px 6px;border-radius:4px;color:var(--blue);">mapArt</code>, <strong>Thumbnail</strong> and <strong>Background</strong> files.</div>
-        <span class="step-tip">⚠️ Tip: Make a backup copy of the original files first!</span>
+        <div class="step-title">Send Preview Images</div>
+        <div class="step-desc">Include the map name, preview images, creator name, social links and a short description of the concept.</div>
       </div>
     </div>
 
     <div class="install-step">
       <div class="step-num">3</div>
       <div class="step-content">
-        <div class="step-title">Replace &amp; Enjoy</div>
-        <div class="step-desc">Replace the original files with my map files (keep the exact same filenames). Start Brawlhalla and enjoy my map! 🎉</div>
+        <div class="step-title">Manual Review</div>
+        <div class="step-desc">Pandex reviews submissions manually before anything goes live. Approved maps can be added as previews first and downloads later.</div>
       </div>
     </div>
 
     <div class="install-note">
-      <strong>📁 Where to find the map folder?</strong><br>
-      Usually located at: <code style="background:rgba(0,200,255,0.08); padding:2px 6px; border-radius:4px; color:var(--blue)">C:\Program Files (x86)\Steam\steamapps\common\Brawlhalla\</code><br>
-      Look inside the <code style="background:rgba(0,200,255,0.08); padding:2px 6px; border-radius:4px; color:var(--blue)">mapArt</code> subfolder.
+      <strong>Contact:</strong><br>
+      Send your submission to <a href="mailto:kontakt.pandapages@gmail.com" style="color:var(--blue);">kontakt.pandapages@gmail.com</a> with the subject <strong>Map Submission – Pandex</strong>.
     </div>
-
   </div>
 </section>
 
+<section id="legal-info">
+  <h2 class="section-title">Platform Rules</h2>
+  <div class="section-divider"></div>
+  <p class="section-sub">Pandex is an independent fan-content platform. It is not affiliated with Ubisoft, Blue Mammoth Games or Brawlhalla. All trademarks belong to their respective owners.</p>
+
+  <div class="install-wrap">
+    <div class="install-note">
+      <strong>Creator rule:</strong><br>
+      Every submitted asset must be original, rights-cleared and removable on request. Rights holders can contact Pandex through the Takedown Policy in the footer.
+    </div>
+  </div>
 </section>
 
 <footer>
@@ -853,7 +803,7 @@
   <div class="footer-brand">PANDEX</div>
   <div style="font-size:.85rem; color:rgba(240,244,255,.55); margin-bottom:18px; max-width:520px; margin-left:auto; margin-right:auto;">
     Hosting platform for original game mods.<br>
-    Featuring custom map backgrounds by independent creators.
+    Showcasing original custom map backgrounds by independent creators.
   </div>
   <div class="footer-cta-row">
     <a class="tiktok-btn" href="https://www.tiktok.com/@brokehalla" target="_blank">
@@ -865,13 +815,15 @@
   </div>
   <div class="footer-links">
     <a href="#maps">Maps</a>
-    <a href="#install">Install Guide</a>
+    <a href="#submit">Submit</a>
     <a href="https://www.tiktok.com/@brokehalla" target="_blank">TikTok</a>
     <a href="https://discord.gg/SyTpDNjmaG" target="_blank">Discord</a>
   </div>
   <div class="footer-links" style="margin-top:16px;">
     <a onclick="openLegal('privacy')" style="cursor:pointer;">Datenschutz</a>
     <a onclick="openLegal('imprint')" style="cursor:pointer;">Impressum</a>
+    <a onclick="openLegal('terms')" style="cursor:pointer;">Terms</a>
+    <a onclick="openLegal('takedown')" style="cursor:pointer;">Takedown</a>
     <a onclick="showConsentModal()" style="cursor:pointer;">Cookie-Einstellungen</a>
   </div>
   <div class="footer-copy" style="margin-top:12px;">© 2026 PANDEX · Unofficial fan-made project. All trademarks belong to their respective owners.</div>
@@ -881,85 +833,6 @@
 </footer>
 
 <script>
-  let adTimer = null;
-  let currentMapName = '';
-  let currentFile = '';
-
-  function openAd(filename, mapName) {
-    currentMapName = mapName;
-    currentFile = filename;
-    document.getElementById('mapNameDisplay').textContent = mapName;
-    document.getElementById('adModal').classList.add('active');
-    // Direct download — no ad wait required
-    document.getElementById('adTimerSection').style.display = 'none';
-    document.getElementById('postAdGuide').style.display = 'none';
-    const btn = document.getElementById('downloadBtn');
-    btn.style.display = 'block';
-    btn.disabled = false;
-    btn.textContent = '✅ Download ' + mapName + ' — FREE';
-  }
-
-  function closeAd() {
-    document.getElementById('adModal').classList.remove('active');
-    clearInterval(adTimer);
-  }
-
-  function startAdTimer() {
-    document.getElementById("postAdGuide").style.display = "none";
-    document.getElementById("adTimerSection").style.display = "block";
-    document.getElementById("downloadBtn").style.display = "block";
-    // Unlock download immediately
-    const btn = document.getElementById('downloadBtn');
-    btn.disabled = false;
-    btn.textContent = '✅ Download ' + currentMapName + ' — FREE';
-  }
-
-  // ── ZIP FILE DATA (base64 encoded) ──
-  const mapZips = {};
-
-  // ╔══════════════════════════════════════════════════╗
-  // ║  DOWNLOAD LOCK — set to false to unlock downloads ║
-  // ║  Once ads are integrated, simply change to false. ║
-  // ╚══════════════════════════════════════════════════╝
-  const DOWNLOADS_LOCKED = true;
-
-  function triggerDownload() {
-    if (DOWNLOADS_LOCKED) {
-      // Downloads are temporarily disabled — show "Coming Soon" message instead
-      showLockedMessage();
-      return;
-    }
-    const zipData = mapZips[currentMapName];
-    if (zipData) {
-      const link = document.createElement('a');
-      link.href = zipData.url;
-      link.download = zipData.filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-    // Show install guide inside modal after ad
-    showPostAdGuide();
-  }
-
-  function showLockedMessage() {
-    document.getElementById('adTimerSection').style.display = 'none';
-    document.getElementById('downloadBtn').style.display = 'none';
-    document.getElementById('postAdGuide').style.display = 'none';
-    document.getElementById('lockedMessage').style.display = 'block';
-  }
-
-  function showPostAdGuide() {
-    document.getElementById('adTimerSection').style.display = 'none';
-    document.getElementById('downloadBtn').style.display = 'none';
-    document.getElementById('postAdGuide').style.display = 'block';
-  }
-
-  // Close modal on overlay click
-  document.getElementById('adModal').addEventListener('click', function(e){
-    if(e.target === this) closeAd();
-  });
-
   function openPreview(name, src) {
     document.getElementById('imgPreviewImg').src = src;
     document.getElementById('imgPreviewLabel').textContent = name;
@@ -971,7 +844,7 @@
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') { closePreview(); closeAd(); }
+    if(e.key === 'Escape') { closePreview(); closeLegal(); }
   });
 
   // ── COOKIE CONSENT (GDPR / EU) ──
@@ -1028,7 +901,7 @@
 
       + '<p><strong>Google AdSense / Google Ads</strong><br>'
       + 'Anbieter: Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Irland.<br>'
-      + 'Zweck: Auslieferung personalisierter Werbung zur Finanzierung der kostenlosen Map-Downloads.<br>'
+      + 'Zweck: Auslieferung personalisierter Werbung zur Finanzierung der kostenlosen Plattform.<br>'
       + 'Verarbeitete Daten: IP-Adresse, Werbe-IDs, Nutzungsdaten, Ger&auml;teinformationen.<br>'
       + 'Rechtsgrundlage: Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, &sect; 25 Abs. 1 TDDDG).<br>'
       + 'Datenschutz: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>'
@@ -1079,6 +952,41 @@
       + '<p>Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank">ec.europa.eu/consumers/odr</a>. Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>'
 
       + '<p style="font-size:.7rem; color:rgba(240,244,255,.4); margin-top:24px;">Diese Datenschutzerkl&auml;rung wurde sorgf&auml;ltig erstellt, ersetzt aber keine Rechtsberatung. Bei rechtlichen Fragen wenden Sie sich bitte an einen Anwalt.</p>',
+
+
+    terms: '<h2>Terms of Service</h2>'
+      + '<h3>1. Scope</h3>'
+      + '<p>Pandex is an independent platform for original game-related fan content. By using the website, you agree to these basic platform rules.</p>'
+      + '<h3>2. Original Content Requirement</h3>'
+      + '<p>Users and creators may only submit or publish content they created themselves or are legally allowed to use. Submissions may not include copied artwork, ripped game files, anime characters, third-party logos, protected characters or other unauthorized intellectual property.</p>'
+      + '<h3>3. Platform Review and Removal</h3>'
+      + '<p>Pandex may review, reject, edit, hide or remove content if there are legal, quality, security or platform-policy concerns.</p>'
+      + '<h3>4. No Official Affiliation</h3>'
+      + '<p>Pandex is not affiliated with Ubisoft, Blue Mammoth Games or Brawlhalla. All trademarks and game names belong to their respective owners.</p>'
+      + '<h3>5. Availability</h3>'
+      + '<p>Pandex may change, pause or discontinue parts of the website at any time. Preview images and downloads may be added, changed or removed.</p>'
+      + '<h3>6. Contact</h3>'
+      + '<p>Questions about these terms can be sent to <a href="mailto:kontakt.pandapages@gmail.com">kontakt.pandapages@gmail.com</a>.</p>'
+      + '<p style="font-size:.7rem; color:rgba(240,244,255,.4); margin-top:24px;">These terms are a practical launch draft and do not replace legal advice.</p>',
+
+    takedown: '<h2>Takedown Policy</h2>'
+      + '<h3>1. Rights Holder Requests</h3>'
+      + '<p>If you believe content on Pandex infringes your rights, contact us at <a href="mailto:kontakt.pandapages@gmail.com">kontakt.pandapages@gmail.com</a>.</p>'
+      + '<h3>2. Required Information</h3>'
+      + '<ul>'
+      + '<li>Your name and contact information</li>'
+      + '<li>A clear description of the protected work or right</li>'
+      + '<li>The exact Pandex URL or content name concerned</li>'
+      + '<li>A short explanation why you believe the content infringes your rights</li>'
+      + '<li>A statement that the information you provide is accurate</li>'
+      + '</ul>'
+      + '<h3>3. Review Process</h3>'
+      + '<p>Pandex will review takedown requests manually and may remove or disable access to the reported content while the request is being checked.</p>'
+      + '<h3>4. Creator Response</h3>'
+      + '<p>If necessary, Pandex may contact the creator for clarification or proof of rights before deciding whether content remains online.</p>'
+      + '<h3>5. Contact</h3>'
+      + '<p>Takedown requests should be sent to <a href="mailto:kontakt.pandapages@gmail.com">kontakt.pandapages@gmail.com</a> with the subject <strong>Pandex Takedown Request</strong>.</p>'
+      + '<p style="font-size:.7rem; color:rgba(240,244,255,.4); margin-top:24px;">This policy is a practical launch draft and does not replace legal advice.</p>',
 
     imprint: '<h2>Impressum</h2>'
 
