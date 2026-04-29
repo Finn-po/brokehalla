@@ -452,6 +452,8 @@
   .footer-links { display:flex; gap:28px; justify-content:center; flex-wrap:wrap; margin-bottom:28px; }
   .footer-links a { color:rgba(240,244,255,.5); text-decoration:none; font-size:.85rem; font-weight:600; letter-spacing:1px; transition:color .2s; }
   .footer-links a:hover { color:var(--blue); }
+  .footer-legal-links { gap:18px; margin-bottom:0; }
+  .footer-legal-links a { font-size:.76rem; letter-spacing:.7px; color:rgba(240,244,255,.44); }
   .footer-copy { font-size:.78rem; color:rgba(240,244,255,.3); }
   .tiktok-btn {
     display:inline-flex; align-items:center; gap:10px;
@@ -731,14 +733,21 @@
     <img class="footer-logo" src="images/logo.png" alt="Pandex panda icon">
     <img class="footer-wordmark" src="images/pandex-wordmark.png" alt="PANDEX">
   </div>
-  <div style="font-size:.85rem; color:rgba(240,244,255,.55); margin-bottom:18px; max-width:520px; margin-left:auto; margin-right:auto;">Independent platform for original game mods.<br>Starting with custom Brawlhalla map previews by Brokehalla.</div>
-  <div class="footer-links">
-    <a href="index.html#maps">Maps</a><a href="creator-brokehalla.html">Creator</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="roadmap.html">Roadmap</a><a href="submit.html">Submit</a><a href="contact.html">Contact</a>
+  <div style="font-size:.8rem; color:rgba(240,244,255,.5); margin-bottom:18px; max-width:520px; margin-left:auto; margin-right:auto; line-height:1.6;">
+    Independent platform for original game mod previews.
   </div>
-  <div class="footer-links" style="margin-top:16px;">
-    <a href="privacy.html">Datenschutz</a><a href="impressum.html">Impressum</a><a href="terms.html">Terms</a><a href="takedown.html">Takedown</a>
+  <div class="footer-links footer-legal-links">
+    <a href="privacy.html">Datenschutz</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="terms.html">Terms</a>
+    <a href="content-policy.html">Content Policy</a>
+    <a href="takedown.html">Takedown</a>
+    <a onclick="showConsentModal()" style="cursor:pointer;">Cookies</a>
   </div>
-  <div class="footer-copy" style="margin-top:12px;">© 2026 PANDEX · Unofficial fan-made project. All trademarks belong to their respective owners.</div>
+  <div class="footer-copy" style="margin-top:16px;">© 2026 PANDEX · Unofficial fan-made project. All trademarks belong to their respective owners.</div>
+  <div style="margin-top:10px; font-size:.68rem; letter-spacing:1.6px; text-transform:uppercase; color:rgba(240,244,255,.32); font-weight:600;">
+    Created by <span style="background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">Pandapages</span>
+  </div>
 </footer>
 <script>
 function openMenu(){document.getElementById('menuPanel').classList.add('active');document.getElementById('menuBackdrop').classList.add('active');document.body.style.overflow='hidden';}
