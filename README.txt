@@ -1,4 +1,14 @@
-Pandex v18 footer cleanup patch
+PANDEX v20 Patch
 
-Copy all .html files into the project root and replace existing versions. robots.txt and sitemap.xml are included unchanged.
-This patch reduces the footer to a compact legal/footer area and keeps the full navigation inside the hamburger menu.
+Changes:
+- privacy.html rewritten so personal data is less block-like and more like explanatory text.
+- cookies.html added as a separate Cookie Information page.
+- Cookies added to the hamburger menu on all pages.
+- Footer Cookies link now opens cookies.html instead of only reopening the modal.
+- sitemap.xml updated with cookies.html.
+
+Copy into project root:
+- all .html files
+- sitemap.xml
+
+robots.txt is included for completeness.
