@@ -885,6 +885,246 @@
     *, *::before, *::after { animation-duration:1ms !important; transition-duration:1ms !important; scroll-behavior:auto !important; }
   }
 
+  /* ===== HOMEPAGE HERO — CONSTELLATION ===== */
+  :root {
+    --glow-celestial: #ffb84d;
+    --glow-astral: #6a8cff;
+    --glow-crystal: #ff5cc8;
+    --glow-citadel: #ffd27a;
+  }
+  .constellation-hero {
+    min-height: max(720px, 100vh);
+    padding: 0 5%;
+    overflow: hidden;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--accent-primary) 25%, transparent), transparent 34%),
+      radial-gradient(circle at 14% 82%, color-mix(in srgb, var(--accent-secondary) 20%, transparent), transparent 36%),
+      linear-gradient(180deg, #05050b 0%, #0a0a14 64%, var(--bg-base) 100%);
+  }
+  .constellation-hero::before {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 120px;
+    z-index: 5;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent, var(--bg-base));
+  }
+  .constellation-hero::after { display: none; }
+  .constellation-stars,
+  .constellation-particles,
+  .constellation-cards {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .constellation-stars { z-index: 1; }
+  .constellation-particles { z-index: 2; overflow: hidden; }
+  .constellation-star {
+    position: absolute;
+    width: var(--s);
+    height: var(--s);
+    left: var(--x);
+    top: var(--y);
+    border-radius: var(--radius-pill);
+    background: rgba(245,245,247,var(--o));
+    box-shadow: 0 0 8px rgba(245,245,247,.45);
+  }
+  .constellation-star.is-twinkle {
+    animation: starTwinkle var(--d) ease-in-out infinite;
+    animation-delay: var(--delay);
+  }
+  .constellation-particle {
+    position: absolute;
+    width: var(--s);
+    height: var(--s);
+    left: var(--x);
+    bottom: -24px;
+    border-radius: var(--radius-pill);
+    background: var(--c);
+    opacity: .72;
+    filter: blur(2px);
+    box-shadow: 0 0 16px var(--c);
+    animation: particleDrift var(--d) linear infinite;
+    animation-delay: var(--delay);
+  }
+  .constellation-cards { z-index: 3; }
+  .constellation-card {
+    --rx: 0deg;
+    --ry: 0deg;
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    top: var(--top);
+    left: var(--left);
+    right: var(--right);
+    bottom: var(--bottom);
+    pointer-events: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid color-mix(in srgb, var(--glow) 42%, transparent);
+    box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 34px color-mix(in srgb, var(--glow) 28%, transparent);
+    overflow: hidden;
+    transform: perspective(1000px) rotate(var(--rot)) rotateX(var(--rx)) rotateY(var(--ry));
+    animation: arenaFloat var(--float-time) ease-in-out infinite alternate;
+    animation-delay: var(--float-delay);
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, opacity 220ms ease;
+    cursor: pointer;
+    will-change: transform;
+  }
+  .constellation-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  .constellation-card:hover,
+  .constellation-card:focus-visible {
+    border-color: color-mix(in srgb, var(--glow) 72%, transparent);
+    box-shadow: 0 26px 74px rgba(0,0,0,.68), 0 0 54px color-mix(in srgb, var(--glow) 52%, transparent);
+    transform: perspective(1000px) translateY(-12px) scale(1.05) rotate(var(--rot)) rotateX(var(--rx)) rotateY(var(--ry));
+    outline: none;
+  }
+  .constellation-card:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 5px; }
+  .constellation-card--celestial {
+    --glow: var(--glow-celestial);
+    --w: 280px;
+    --h: 170px;
+    --top: 18%;
+    --left: 8%;
+    --right: auto;
+    --bottom: auto;
+    --rot: -4deg;
+    --float-time: 6.4s;
+    --float-delay: -.8s;
+  }
+  .constellation-card--astral {
+    --glow: var(--glow-astral);
+    --w: 320px;
+    --h: 195px;
+    --top: 32%;
+    --left: auto;
+    --right: 10%;
+    --bottom: auto;
+    --rot: 3deg;
+    --float-time: 8.2s;
+    --float-delay: -2.6s;
+  }
+  .constellation-card--crystal {
+    --glow: var(--glow-crystal);
+    --w: 260px;
+    --h: 160px;
+    --top: auto;
+    --left: 14%;
+    --right: auto;
+    --bottom: 22%;
+    --rot: 5deg;
+    --float-time: 7.2s;
+    --float-delay: -1.4s;
+  }
+  .constellation-card--citadel {
+    --glow: var(--glow-citadel);
+    --w: 300px;
+    --h: 185px;
+    --top: auto;
+    --left: auto;
+    --right: 6%;
+    --bottom: 14%;
+    --rot: -3deg;
+    --float-time: 8.8s;
+    --float-delay: -3.2s;
+  }
+  .constellation-copy {
+    position: relative;
+    z-index: 4;
+    width: min(640px, 100%);
+    text-align: center;
+    display: grid;
+    justify-items: center;
+  }
+  .constellation-copy .eyebrow {
+    margin-bottom: var(--space-6);
+    text-shadow: 0 0 18px color-mix(in srgb, var(--accent-primary) 34%, transparent);
+  }
+  .constellation-copy .eyebrow::after {
+    content: "";
+    display: block;
+    width: 84px;
+    height: 1px;
+    margin: var(--space-3) auto 0;
+    background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+    opacity: .72;
+  }
+  .constellation-copy .hero-title {
+    font-weight: 700;
+    line-height: 1.05;
+    text-shadow: 0 5px 28px rgba(0,0,0,.7), 0 0 28px rgba(255,184,77,.08);
+  }
+  .constellation-copy .hero-sub {
+    max-width: 480px;
+    margin-top: var(--space-6);
+    color: var(--text-secondary);
+    text-shadow: 0 3px 18px rgba(0,0,0,.75);
+  }
+  .constellation-copy .hero-actions {
+    margin-top: var(--space-8);
+    gap: var(--space-4);
+  }
+  @keyframes starTwinkle {
+    0%, 100% { opacity: .28; transform: scale(.86); }
+    50% { opacity: 1; transform: scale(1.18); }
+  }
+  @keyframes particleDrift {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(var(--drift), -112vh, 0); }
+  }
+  @keyframes arenaFloat {
+    from { translate: 0 -8px; }
+    to { translate: 0 8px; }
+  }
+  @media (max-width: 1023px) {
+    .constellation-card { scale: .75; }
+    .constellation-card--celestial { --left: 2%; }
+    .constellation-card--astral { --right: 2%; }
+    .constellation-card--crystal { --left: 5%; }
+    .constellation-card--citadel { --right: 3%; }
+  }
+  @media (max-width: 767px) {
+    .constellation-hero { min-height: 100vh; padding: 112px 5% 90px; }
+    .constellation-card {
+      --w: 140px;
+      --h: 85px;
+      opacity: .55;
+      animation-duration: 12s;
+    }
+    .constellation-card--celestial { --top: 13%; --left: 3%; --bottom: auto; --right: auto; }
+    .constellation-card--astral { --top: 15%; --right: 2%; --bottom: auto; --left: auto; }
+    .constellation-card--crystal { --bottom: 13%; --left: 3%; --top: auto; --right: auto; }
+    .constellation-card--citadel { --bottom: 10%; --right: 2%; --top: auto; --left: auto; }
+    .constellation-card:hover,
+    .constellation-card:focus-visible {
+      transform: perspective(1000px) translateY(-6px) scale(1.02) rotate(var(--rot));
+    }
+    .constellation-copy .hero-sub { font-size: var(--text-base); }
+    .constellation-copy .hero-actions { width: 100%; }
+    .constellation-copy .btn { flex: 1 1 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .constellation-star.is-twinkle,
+    .constellation-particle,
+    .constellation-card {
+      animation: none !important;
+    }
+    .constellation-card,
+    .constellation-card:hover,
+    .constellation-card:focus-visible {
+      --rx: 0deg !important;
+      --ry: 0deg !important;
+    }
+  }
+
 </style>
 
 </head>
@@ -916,13 +1156,32 @@
 </aside>
 
 
-<section class="hero">
-  <div class="eyebrow">PRE-LAUNCH · PHASE 1 LIVE</div>
-  <h1 class="hero-title">Original arena concepts.<br>Built by independent creators.</h1>
-  <p class="hero-sub">A pre-launch hub for fan-made platform-fighter arenas. Previews now, downloads soon.</p>
-  <div class="hero-actions">
-    <a class="btn btn--primary" href="#maps">Browse Arenas →</a>
-    <a class="btn btn--secondary" href="#notify">Get notified</a>
+<section class="hero constellation-hero" aria-labelledby="hero-title">
+  <!-- Starfield and particles are generated once on load to keep the markup light. -->
+  <div class="constellation-stars" aria-hidden="true"></div>
+  <div class="constellation-particles" aria-hidden="true"></div>
+  <div class="constellation-cards" aria-hidden="false">
+    <a class="constellation-card constellation-card--celestial" href="/maps/celestial-storm/" aria-label="View Celestial Storm Arena details">
+      <img src="images/celestial-storm-arena.png" alt="Celestial Storm Arena preview" loading="eager">
+    </a>
+    <a class="constellation-card constellation-card--astral" href="/maps/astral-observatory/" aria-label="View Astral Observatory details">
+      <img src="images/astral-observatory.png" alt="Astral Observatory preview" loading="eager">
+    </a>
+    <a class="constellation-card constellation-card--crystal" href="/maps/crystal-rift/" aria-label="View Crystal Rift details">
+      <img src="images/crystal-rift.png" alt="Crystal Rift preview" loading="eager">
+    </a>
+    <a class="constellation-card constellation-card--citadel" href="/maps/golden-citadel/" aria-label="View Golden Citadel details">
+      <img src="images/golden-citadel.png" alt="Golden Citadel preview" loading="eager">
+    </a>
+  </div>
+  <div class="constellation-copy">
+    <div class="eyebrow">PRE-LAUNCH · PHASE 1 LIVE</div>
+    <h1 id="hero-title" class="hero-title">Original arena concepts.<br>Forged by independent creators.</h1>
+    <p class="hero-sub">A pre-launch hub for fan-made platform-fighter arenas. Previews now, downloads soon.</p>
+    <div class="hero-actions">
+      <a class="btn btn--primary" href="#maps">Browse Arenas →</a>
+      <a class="btn btn--secondary" href="#signup">Get notified</a>
+    </div>
   </div>
 </section>
 
@@ -973,7 +1232,7 @@
   </div>
 </section>
 
-<section id="notify" class="signup-section" aria-labelledby="home-signup-title">
+<section id="signup" class="signup-section" aria-labelledby="home-signup-title">
   <div class="signup-card">
     <h2 id="home-signup-title">Get notified when downloads go live</h2>
     <p>No spam. One email when Phase 2 ships.</p>
@@ -1218,6 +1477,53 @@
 
   document.addEventListener('DOMContentLoaded', initSignupForms);
 
+</script>
+<script>
+  (function initConstellationHero(){
+    var hero = document.querySelector('.constellation-hero');
+    if (!hero) return;
+    var stars = hero.querySelector('.constellation-stars');
+    var particles = hero.querySelector('.constellation-particles');
+    for (var i = 0; i < 120; i++) {
+      var star = document.createElement('span');
+      star.className = 'constellation-star' + (i < 15 ? ' is-twinkle' : '');
+      star.style.setProperty('--x', (Math.random() * 100).toFixed(2) + '%');
+      star.style.setProperty('--y', (Math.random() * 100).toFixed(2) + '%');
+      star.style.setProperty('--s', (1 + Math.random() * 2).toFixed(2) + 'px');
+      star.style.setProperty('--o', (0.3 + Math.random() * 0.6).toFixed(2));
+      star.style.setProperty('--d', (3 + Math.random() * 3).toFixed(2) + 's');
+      star.style.setProperty('--delay', (-Math.random() * 6).toFixed(2) + 's');
+      stars.appendChild(star);
+    }
+    for (var j = 0; j < 25; j++) {
+      var particle = document.createElement('span');
+      particle.className = 'constellation-particle';
+      particle.style.setProperty('--x', (Math.random() * 100).toFixed(2) + '%');
+      particle.style.setProperty('--s', (3 + Math.random() * 3).toFixed(2) + 'px');
+      particle.style.setProperty('--d', (8 + Math.random() * 12).toFixed(2) + 's');
+      particle.style.setProperty('--delay', (-Math.random() * 20).toFixed(2) + 's');
+      particle.style.setProperty('--drift', ((Math.random() * 80) - 40).toFixed(1) + 'px');
+      particle.style.setProperty('--c', Math.random() > .5 ? 'var(--glow-celestial)' : 'var(--glow-astral)');
+      particles.appendChild(particle);
+    }
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      document.querySelectorAll('.constellation-card').forEach(function(card){
+        function tiltCard(event) {
+          var rect = card.getBoundingClientRect();
+          var x = ((event.clientX - rect.left) / rect.width - .5) * 12;
+          var y = ((event.clientY - rect.top) / rect.height - .5) * -10;
+          card.style.setProperty('--ry', x.toFixed(2) + 'deg');
+          card.style.setProperty('--rx', y.toFixed(2) + 'deg');
+        }
+        card.addEventListener('mouseenter', function(){ card.addEventListener('mousemove', tiltCard); });
+        card.addEventListener('mouseleave', function(){
+          card.removeEventListener('mousemove', tiltCard);
+          card.style.setProperty('--ry', '0deg');
+          card.style.setProperty('--rx', '0deg');
+        });
+      });
+    }
+  })();
 </script>
 
 <div id="imgPreviewOverlay" onclick="closePreview()">
